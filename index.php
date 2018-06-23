@@ -1,0 +1,248 @@
+<?php
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$mysqli = new mysqli("dawidoliveira.ddns.net","dawid","15012203","server_widro");
+
+	$q1 = $mysqli->query("SELECT visita from dawid order by visita desc limit 1;");
+	$q2 = $mysqli->query("SELECT visita from server order by visita desc limit 1;");
+	$count = 0;
+	$count1 = 0;
+	while($a = $q1->fetch_array()){
+		$count = $a['visita']+1;
+	}
+	while($b = $q2->fetch_array()){
+		$count1 = $b['visita']+1;
+	}
+	$q = $mysqli->query("UPDATE dawid SET visita = '$count'");
+	$q3 = $mysqli->query("UPDATE server SET visita = '$count1'");
+ ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dáwid Silva Oliveira</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+      <!-- in your header -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="sideNav"  style="background: #0B6156">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">DÁWID SILVA OLIVEIRA</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Dáwid">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">Experiência</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Educação</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">Interesses</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0" style="color: #0B6156">Dáwid Silva Oliveira
+          </h1>
+          <div class="subheading mb-5" style="color: #0B6156"><span>Arapiraca</span>, <span>Alagoas</span> · <span>Brasil</span> · (82) 98231-3000·
+            <a href="mailto:name@email.com"  style="color: #0B6156">dawid.oliveira@hotmail.com</a>
+          </div>
+          <p class="mb-5" align="justify">Olá, Sou Dáwid, 19 anos, graduando em Ciência da Computação - UFAL, desenvolvedor PHP (ainda em aprendizado) e Técnico em Informática - IFAL. Estou há 5 anos trabalhando com tecnologia, em especial, na área de Web Design.</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/dawid.oliveira.0">
+                <span class="fa-stack fa-lg" >
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/dawid.oliveira/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>   
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5">Experiência</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">DESENVOLVEDOR BACK-END</h3>
+              <div class="subheading mb-3">ESTÚDIO WIDRO</div>
+              <p  align="justify">Desenvolvendo sistemas web e sites em geral.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">2018</span>
+            </div>
+          </div>
+        
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Aprendiz de Marinheiro</h3>
+              <div class="subheading mb-3">Marinha do Brasil</div>
+              <p  align="justify">Conhecimento na área militar.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">2018</span>
+            </div>
+          </div>
+            
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Web Designer	</h3>
+              <div class="subheading mb-3">Popular Alimentos</div>
+              <p  align="justify">Manutenção e desenvolvimento do site da empresa.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">2016 - 2017</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Monitor</h3>
+              <div class="subheading mb-3">AUTÔNOMO</div>
+              <p>Aulas de reforço de Matemática, programação em JAVA e em PHP no contraturno. </p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">2015 - 2017</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Educação</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Universidade Federal de Alagoas - Campus Arapiraca</h3>
+              <div class="subheading mb-3">Bacharelado em Ciência da Computação</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">Agosto 2017 - Presente</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Instituto Federal de Educação, Ciência e Tecnologia de Alagoas - Campus Arapiraca</h3>
+              <div class="subheading mb-3">Técnico em Informática</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">Fevereiro 2013 - Dezembro 2017</span>
+            </div>
+          </div>
+            <br>
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">CURSOS NA UDEMY</h3>
+              <div class="subheading mb-3">Desenvolvimento Android e Web</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="" style="color: #0D4CA1">2017 - 2018 </span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+          <h2 class="mb-5">HABILIDADE</h2>
+
+          <div class="subheading mb-3">Linguagens de Programação &amp; Design Gráfico &amp; Computação</div>
+          <ul class="list-inline list-icons">
+            <li class="list-inline-item">
+              <i class="devicons devicons-html5"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-css3"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-javascript"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicon-php-plain"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicon-android-plain"></i>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto" align="justify">
+          <h2 class="mb-5">Interesses</h2>
+          <p>Terminar o meu projeto, colocar em prática e ajudar as pessoas por todo o mundo. </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+  </body>
+
+</html>
